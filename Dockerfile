@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ARG AUUID="6f100749-a076-436d-aac9-b9a0f1cde184"
+ARG AUUID="23bc3001-e8b8-45cf-8b81-cc34701b1ead"
 ARG CADDYIndexPage="https://github.com/AYJCSGM/mikutap/archive/master.zip"
 ARG ParameterSSENCYPT="chacha20-ietf-poly1305"
 ARG PORT=8080
@@ -10,7 +10,7 @@ ADD etc/xray.json /tmp/xray.json
 ADD start.sh /start.sh
 
 RUN apk update && \
-    apk add --no-cache ca-certificates caddy tor wget && \
+    apk add --no-cache ca-certificates caddy tor wget && \ 
     wget -O Xray-linux-64.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
     unzip Xray-linux-64.zip && \
     chmod +x /xray && \
